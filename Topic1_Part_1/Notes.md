@@ -16,7 +16,13 @@ Creating data types to work with input and handle and allocate memory as impleme
 
 ### **Object Oriented Programming**
 Team of classes (5+ classes) that work together to solve a problem. (Important to avoid meandering).
- 
+
+## What is a Data Structure? 
+---
+A Data structure is how we use memory to store data. (An Array, A Linear Linked List, Etc)
+
 ## What is an ADT?
 ---
 Abstract Data types hides how memory is worked with inside of a class.
+
+## *Difference Between ADT & Data Structures:*
