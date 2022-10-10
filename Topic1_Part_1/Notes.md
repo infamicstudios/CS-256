@@ -1,7 +1,8 @@
-# **Abstract Data Types and Linear Linked Lists**
 
-## **C++ Paradigms**:
+# **Topic 1 Part 1 Video Notes**
+## **Abstract Data Types and Linear Linked Lists**
 ---
+## **C++ Paradigms**:
 ### **Procedural Abstraction:**
 Code that can take parameters and handle various forms of situations depending on data input.
 
