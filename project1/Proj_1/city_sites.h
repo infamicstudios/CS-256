@@ -1,4 +1,4 @@
-// By Duncan McFarlane on 10/4/22 for PDX.EDU CS163
+//By Duncan McFarlane on 10/4/22 for PDX.EDU CS163
 // Revised 10/5/22 
 // I have realized after writing this that it would be much better 
 // to refactor my structs into classes but due to time constraints I can't do this
