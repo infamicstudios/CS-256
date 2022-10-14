@@ -81,11 +81,11 @@ bool CS_Trip_Planning::displayCitiesSites(char Cityname[]){
         Site_node * tempNode = desiredCity->head;
 
         //If no sites exist
-        if(!tempNode){
+        if(tempNode == NULL){
             printf("\nError: %s Does not contain any sites\n", Cityname);
             return false;
         }
-        while(tempNode){
+        while(tempNode == NULL){
             printDetails(tempNode->Sitedata);
             tempNode = tempNode->next;
         }
