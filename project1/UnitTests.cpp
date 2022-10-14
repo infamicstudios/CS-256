@@ -59,14 +59,26 @@ bool test_AddSite(){
         //aJourney.Add_City((char*)"Portland");
         Site EmpireStateBuilding  = {
         (char*)"Empire State Building", // Name of the site
+        0,
         60, // The time consumed by visiting in Minutes
         0,  // Cost in dollars of visiting the Site
         false, // If Reservations are required
         false, // If a swimsuit is required
         false  // If the site has been visited in the past
         };
+        Site PortlandZoo  = {
+        (char*)"Portland Zoo", // Name of the site
+        1,
+        200, // The time consumed by visiting in Minutes
+        12,  // Cost in dollars of visiting the Site
+        false, // If Reservations are required
+        false, // If a swimsuit is required
+        false  // If the site has been visited in the past
+        };
         aJourney.Add_Site_To_City((char*)"New York", &EmpireStateBuilding);
+        aJourney.Add_Site_To_City((char*)"Portland", &PortlandZoo);
         aJourney.displayCitiesSites((char*)"New York");
+        aJourney.displayCitiesSites((char*)"Portland");
         return true;
     }
     catch (int){

@@ -1,7 +1,7 @@
 // By Duncan McFarlane 10/6/22
 
 #include "city_sites.h"
-#include <libc.h>
+#include <cstring>
 #include <cstdint>
 #include <stdio.h>
 
@@ -335,36 +335,3 @@ void CS_Trip_Planning::Sort(Site_node * headptr)
 //////////////
 // Utility Methods
 //////////////
-
-
-/*
-//TODO: THIS method is unused right now and needs alot of work. Right now it only picks up the first duplicate.
-// Additionally it is unused as it needs to iterate over and not just from the node.
-template <typename T> bool CS_Trip_Planning::PopDuplicates(T* aNode, char * duplicateName = 0){
-
-    // This is kinda funky but it grabs the first name on the first node.
-    if(aNode != 0){
-        if (strcmp(duplicateName, aNode->name;)){
-            return PopInPlace(aNode);
-        }
-        //Catch the first duplicate name and then pass it along on every iteration.
-        if (duplicateName == NULL)
-            duplicateName = aNode->name;
-    }
-    return false;
-}
-
-template <typename T> bool CS_Trip_Planning::CheckDuplicates(T* aNode, char * duplicateName = 0){
-
-    // Grabs the first name on the first node on first iteration.
-    if (duplicateName == NULL)
-        duplicateName = aNode->name;
-    if(aNode != 0){
-        if (strcmp(duplicateName, aNode->name;)){
-            return true;
-        }
-        CheckDuplicates(T* aNode, duplicateName);
-    }
-    return false;
-}
-*/
