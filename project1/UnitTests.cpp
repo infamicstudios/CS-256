@@ -56,9 +56,9 @@ bool test_AddSite(){
         aJourney.Add_City((char*)"Portland");
         aJourney.Add_City((char*)"New York");
         aJourney.Add_City((char*)"Seattle");
-        //aJourney.Add_City((char*)"Portland"); 
+        //aJourney.Add_City((char*)"Portland");
         Site EmpireStateBuilding  = {
-        (char*)"Empire State Building", // Name of the site 
+        (char*)"Empire State Building", // Name of the site
         60, // The time consumed by visiting in Minutes
         0,  // Cost in dollars of visiting the Site
         false, // If Reservations are required
@@ -87,9 +87,9 @@ bool test_RemoveSite(){
         aJourney.Add_City((char*)"Portland");
         aJourney.Add_City((char*)"New York");
         aJourney.Add_City((char*)"Seattle");
-        //aJourney.Add_City((char*)"Portland"); 
+        //aJourney.Add_City((char*)"Portland");
         Site EmpireStateBuilding  = {
-        (char*)"Empire State Building", // Name of the site 
+        (char*)"Empire State Building", // Name of the site
         60, // The time consumed by visiting in Minutes
         0, // Cost in dollars of visiting the Site
         false, // If Reservations are required

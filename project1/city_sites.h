@@ -7,7 +7,8 @@
 #include <map>
 
 struct Site {
-  char * name; // Name of the site 
+  char * name; // Name of the site
+  unsigned int priority; 
   unsigned int visitTime_mins; // The time consumed by visiting in Minutes
   unsigned int costDollars; // Cost in dollars of visiting the Site
   bool reservationsRequired; // If Reservations are required
@@ -77,6 +78,7 @@ class CS_Trip_Planning {
     /// @param aSite Prefilled Site Struct containing Site data 
     /// @return True if sucesfully added
     bool Add_Site_To_City(char CityName[], struct Site * aSite);
+    bool Add_Site_To_City(char CityName[], struct Site * aSite, unsigned int Priority);
 
     /// @brief Remove a Site from a city
     /// @param CityName The name of the city containing Site
@@ -90,6 +92,8 @@ class CS_Trip_Planning {
     /// @brief Recursively display all sites in a specific city
     /// @param CityName The name of the City to display data on 
     bool displayCitiesSites(char CityName[]); // Display all the sites in a city
+
+    bool displaySitesWithName(char sitename[]);
 
     /// @brief Search for a specific type of site by site name across all cities
     /// @param SiteName The name of the site to search for ("zoo", "concert") etc.
@@ -135,6 +139,10 @@ class CS_Trip_Planning {
     /// @param aNode Node to remove from the linked list
     /// @return Head to the new linked list.
     template <typename T> T* PopInPlace(T* llhead, T* aNode);
+
+    Site_node * MergeSortedSites(Site_node* first, Site_node* second);
+    void SplitSitesList(Site_node* source, Site_node** front, Site_node** back);
+    void Sort(Site_node * headptr);
 
     //Traverse a linked list for a name
     //template <typename T> bool PopDuplicates(T* aNode, char * duplicateName = 0);
