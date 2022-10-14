@@ -29,33 +29,6 @@ struct City_node {
   Site_node * head; // Head pointer to list of Sites
 };
 
-//These overloaded == operators break for some reason. Maybe the compiler is autogenerating these?
-/*
-bool operator==(const Site& site1, const Site& site2)
-{
-    return !strcmp(site1.name, site2.name)                           && 
-            site1.visitTime_mins == site2.visitTime_mins             &&
-            site1.costDollars == site2.costDollars                   &&
-            site1.reservationsRequired == site2.reservationsRequired &&
-            site1.swimsuitRequired == site2.swimsuitRequired         &&
-            site1.hasBeenVisited == site2.hasBeenVisited;
-}*/
-
-/*
-bool operator==(const Site_node& site1, const Site_node& site2)
-{
-    return site1.Sitedata == site2.Sitedata;
-}
-*/
-
-/*
-bool operator==(const City_node& City1, const City_node& City2)
-{
-  return !strcmp(City1.name, City2.name)                       && 
-      City1.numsites == City2.numsites;
-}
-*/
-
 
 class CS_Trip_Planning {
 

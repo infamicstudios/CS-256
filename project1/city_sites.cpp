@@ -28,9 +28,9 @@ CS_Trip_Planning::~CS_Trip_Planning(){
 /// @return True if sucessful
 bool CS_Trip_Planning::Add_City(char *name){
     City_node *newCity = new City_node;
-    if (traverseForCityName(&name)){
-        printf("\nERROR: A city with this name already exists\n");
-    }
+    // TODO Check if a duplicate city exists
+    // if failure
+    //      return false
     newCity->name = name;
     newCity->numsites = 0;
     newCity->next = head; // Swap and push to front of LLL
@@ -72,7 +72,7 @@ bool CS_Trip_Planning::displayCitiesSites(char Cityname[]){
     City_node * desiredCity = traverseForCityName(&Cityname);
 
     if(desiredCity == NULL){
-        printf("\nError: %s is not a registered city.\n", Cityname);
+        printf("Error: %s is not a registered city.", Cityname);
         return false;
     } else {
 
@@ -90,35 +90,6 @@ bool CS_Trip_Planning::displayCitiesSites(char Cityname[]){
             tempNode = tempNode->next;
         }
         return true;
-    }
-}
-
-/// @brief Display all Sites within a city TODO: This displays sites twice for some reason
-/// @param Cityname The name of city to display sites for
-/// @return true if the city exists and has sites
-bool CS_Trip_Planning::displaySitesWithName(char sitename[]){
-    bool sitesFound = false;
-
-    if(sitename == NULL){
-        printf("\nError: site name was not specified.\n");
-        return false;
-    } else {
-        City_node * currentCity = head;
-        printf("\nHere are all the sites with name %s:\n", sitename);
-        while(currentCity != NULL){
-            Site_node * currentSite = currentCity->head;
-            while (currentSite != NULL)
-            {   
-                if (strcmp(currentSite->name, sitename) == 0)
-                {
-                    printDetails(currentSite->Sitedata);
-                }
-                currentSite = currentSite->next;
-            }
-        }
-    }
-    if(!sitesFound){
-        printf("No sites with that name were found");
     }
 }
 
@@ -150,11 +121,6 @@ bool CS_Trip_Planning::Add_Site_To_City(char CityName[], struct Site * sitedata)
     desiredCity->numsites++;
     Sort(desiredCity->head);
     return true;
-}
-
-bool CS_Trip_Planning::Add_Site_To_City(char CityName[], struct Site * sitedata, unsigned int priority){
-    sitedata->priority=priority;
-    return Add_Site_To_City(CityName, sitedata);
 }
 
 
@@ -226,6 +192,8 @@ template <typename T> T* traverseForName(T* llhead, char * aName[]){
     return current;
 }
 */
+
+
 ////
 // End Traverse Methods
 ///
@@ -286,9 +254,6 @@ void CS_Trip_Planning::printDetails(){
     }
 }
 
-//////
-/// Sort methods (a super super textbook implementation of merge sort).
-//////
 Site_node * CS_Trip_Planning::MergeSortedSites(Site_node* first, Site_node* second){
     Site_node* result = NULL;
 
@@ -359,3 +324,47 @@ void CS_Trip_Planning::Sort(Site_node * headptr)
 ////
 // End Display Methods
 ///
+
+
+///WORK IN PROGESS CODE
+
+
+///WORK IN PROGESS CODE
+
+
+//////////////
+// Utility Methods
+//////////////
+
+
+/*
+//TODO: THIS method is unused right now and needs alot of work. Right now it only picks up the first duplicate.
+// Additionally it is unused as it needs to iterate over and not just from the node.
+template <typename T> bool CS_Trip_Planning::PopDuplicates(T* aNode, char * duplicateName = 0){
+
+    // This is kinda funky but it grabs the first name on the first node.
+    if(aNode != 0){
+        if (strcmp(duplicateName, aNode->name;)){
+            return PopInPlace(aNode);
+        }
+        //Catch the first duplicate name and then pass it along on every iteration.
+        if (duplicateName == NULL)
+            duplicateName = aNode->name;
+    }
+    return false;
+}
+
+template <typename T> bool CS_Trip_Planning::CheckDuplicates(T* aNode, char * duplicateName = 0){
+
+    // Grabs the first name on the first node on first iteration.
+    if (duplicateName == NULL)
+        duplicateName = aNode->name;
+    if(aNode != 0){
+        if (strcmp(duplicateName, aNode->name;)){
+            return true;
+        }
+        CheckDuplicates(T* aNode, duplicateName);
+    }
+    return false;
+}
+*/
